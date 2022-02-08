@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using yad2_clone_server.Models;
+using yad2_clone_server.Repositories;
 
 namespace yad2_clone_server
 {
@@ -30,6 +31,7 @@ namespace yad2_clone_server
                 options.UseSqlServer(Configuration.GetConnectionString("Yad2Connection"));
             });
             services.AddControllers();
+            services.AddScoped<IListingsRepo, ListingsRepo>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

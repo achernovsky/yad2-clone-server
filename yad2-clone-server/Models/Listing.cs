@@ -7,6 +7,7 @@ namespace yad2_clone_server.Models
 {
     public class Listing
     {
+        public int Id { get; set; }
         public int Price { get; set; }
         public int NumOfRooms { get; set; }
         public int Floor { get; set; }

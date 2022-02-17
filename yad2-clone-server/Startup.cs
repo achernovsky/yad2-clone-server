@@ -31,6 +31,16 @@ namespace yad2_clone_server
                 options.UseSqlServer(Configuration.GetConnectionString("Yad2Connection"));
             });
             services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyAllowSpecificOrigins", builder =>
+                {
+                    builder
+                    .WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
             services.AddScoped<IListingsRepo, ListingsRepo>();
         }
 
@@ -42,7 +52,7 @@ namespace yad2_clone_server
             }
 
             app.UseRouting();
-
+            app.UseCors("MyAllowSpecificOrigins");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

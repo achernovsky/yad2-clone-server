@@ -38,7 +38,7 @@ namespace yad2_clone_server.Controllers
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
-                    username = token.Claims.ToArray()[0].Value,
+                    email = token.Claims.ToArray()[0].Value,
                     userid = token.Claims.ToArray()[1].Value
                 });
             else

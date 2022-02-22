@@ -35,7 +35,8 @@ namespace yad2_clone_server.Repositories
             IdentityUser user = new IdentityUser()
             {
                 SecurityStamp = Guid.NewGuid().ToString(),
-                Email = model.Email
+                Email = model.Email,
+                UserName = model.Email
             };
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)

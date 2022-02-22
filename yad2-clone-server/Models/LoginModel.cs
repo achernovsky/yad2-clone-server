@@ -11,4 +11,4 @@ namespace yad2_clone_server.Models
         public string Password { get; set; }
     }
 }
-}
+

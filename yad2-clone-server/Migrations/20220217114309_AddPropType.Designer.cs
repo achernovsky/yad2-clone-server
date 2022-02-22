@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using yad2_clone_server.Models;
 
 namespace yad2_clone_server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220217114309_AddPropType")]
+    partial class AddPropType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -270,9 +272,6 @@ namespace yad2_clone_server.Migrations
                     b.Property<bool>("HasWaterHeater")
                         .HasColumnType("bit");
 
-                    b.Property<string>("ImgUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsPriceFlexible")
                         .HasColumnType("bit");
 
@@ -330,7 +329,6 @@ namespace yad2_clone_server.Migrations
                             HasStorage = false,
                             HasTadiranAC = false,
                             HasWaterHeater = false,
-                            ImgUrl = "https://img.yad2.co.il/Pic/202107/04/2_1/o/y2_1_06907_20210704140752.jpeg",
                             IsPriceFlexible = false,
                             IsRenovated = false,
                             Neighborhood = "הרצליה ב'",
@@ -362,7 +360,6 @@ namespace yad2_clone_server.Migrations
                             HasStorage = false,
                             HasTadiranAC = false,
                             HasWaterHeater = false,
-                            ImgUrl = "https://img.yad2.co.il/Pic/202201/19/2_1/o/y2_2_02198_20220119201822.jpeg",
                             IsPriceFlexible = false,
                             IsRenovated = false,
                             Neighborhood = "נווה נאמן",
@@ -394,7 +391,6 @@ namespace yad2_clone_server.Migrations
                             HasStorage = false,
                             HasTadiranAC = false,
                             HasWaterHeater = false,
-                            ImgUrl = "https://img.yad2.co.il/Pic/202112/16/2_1/o/y2_1_01883_20211216115430.jpeg",
                             IsPriceFlexible = false,
                             IsRenovated = false,
                             Neighborhood = "הרצליה הירוקה",
